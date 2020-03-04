@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="debug|Win32">
       <Configuration>debug</Configuration>
@@ -22,29 +22,30 @@
     <ProjectName>netty_tcnative</ProjectName>
     <RootNamespace>netty_tcnative</RootNamespace>
     <ProjectGuid>{42EB387C-0D16-471E-8859-C2CF31F8094D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -64,17 +65,17 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(ProjectDir)/target/$(Platform)-$(Configuration)/lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(ProjectDir)/target/$(Platform)-$(Configuration)/obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(ProjectDir)/target/$(Platform)-$(Configuration)/lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(ProjectDir)/target/$(Platform)-$(Configuration)/obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)/target/$(Platform)-$(Configuration)/lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)/target/$(Platform)-$(Configuration)/obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(ProjectDir)/target/$(Platform)-$(Configuration)/lib\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(ProjectDir)/target/$(Platform)-$(Configuration)/obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(OUTPUTDIR)/$(ProjectName)/$(PlatformArchitecture)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
@@ -107,7 +108,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(JAVA_HOME)\include;$(JAVA_HOME)\include\win32;$(APR_INCLUDE_DIR);$(APR_INCLUDE_DIR)\arch\win32;$(OPENSSL_INCLUDE_DIR);$(ProjectDir)\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(JAVA_HOME)\include;$(JAVA_HOME)\include\win32;$(SFTDEVELOPMENT)\library\ext\src\apr;$(APR_INCLUDE_DIR);$(APR_INCLUDE_DIR)\arch\win32;$(OPENSSL_INCLUDE_DIR);$(ProjectDir)\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
@@ -124,7 +125,7 @@
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Psapi.lib;Shlwapi.lib;Ws2_32.lib;libapr-1.lib;ssleay32.lib;libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Psapi.lib;Shlwapi.lib;Ws2_32.lib;libapr-1.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OPENSSL_LIB_DIR);$(APR_LIB_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -161,7 +162,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(JAVA_HOME)\include;$(JAVA_HOME)\include\win32;$(APR_INCLUDE_DIR);$(APR_INCLUDE_DIR)\arch\win32;$(OPENSSL_INCLUDE_DIR);$(ProjectDir)\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(JAVA_HOME)\include;$(JAVA_HOME)\include\win32;$(SFTDEVELOPMENT)\library\ext\src\apr;$(APR_INCLUDE_DIR);$(APR_INCLUDE_DIR)\arch\win32;$(OPENSSL_INCLUDE_DIR);$(ProjectDir)\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WIN64;_DEBUG;_WINDOWS;HAVE_OPENSSL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -178,7 +179,7 @@
       <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Psapi.lib;Shlwapi.lib;Ws2_32.lib;libapr-1.lib;ssleay32.lib;libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Psapi.lib;Shlwapi.lib;Ws2_32.lib;libapr-1.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OPENSSL_LIB_DIR);$(APR_LIB_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -186,13 +187,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include=".\src\bb.c" />
-    <ClCompile Include=".\src\error.c" />
-    <ClCompile Include=".\src\jnilib.c" />
-    <ClCompile Include=".\src\native_constants.c" />
-    <ClCompile Include=".\src\ssl.c" />
-    <ClCompile Include=".\src\sslcontext.c" />
-    <ClCompile Include=".\src\sslutils.c" />
+    <ClCompile Include="src\bb.c" />
+    <ClCompile Include="src\error.c" />
+    <ClCompile Include="src\jnilib.c" />
+    <ClCompile Include="src\native_constants.c" />
+    <ClCompile Include="src\ssl.c" />
+    <ClCompile Include="src\sslcontext.c" />
+    <ClCompile Include="src\sslutils.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
