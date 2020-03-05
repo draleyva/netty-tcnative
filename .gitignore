@@ -41,3 +41,4 @@ cmake-*
 # exclude docker-sync stuff
 .docker-sync
 */.docker-sync
+/openssl-dynamic/src/main/native-package/.vs/vs2010
