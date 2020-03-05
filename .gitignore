@@ -42,3 +42,4 @@ cmake-*
 .docker-sync
 */.docker-sync
 /openssl-dynamic/src/main/native-package/.vs/vs2010
+/openssl-dynamic/src/main/native-package/target
