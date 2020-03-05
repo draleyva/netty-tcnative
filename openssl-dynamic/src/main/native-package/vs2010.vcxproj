@@ -104,6 +104,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
@@ -132,6 +134,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -158,6 +162,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
@@ -184,6 +190,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(ProjectDir)/target/$(Platform)-$(Configuration)/lib/$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
